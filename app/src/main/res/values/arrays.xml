@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+
+
+    <string-array name="dificultad">
+        <item>Facil</item>
+        <item>Medio</item>
+        <item>Dicicil</item>
+        <item>Muy dificil</item>
+    </string-array>
+
+
+
+    <string-array name="facil">
+        <item>1 a 30</item>
+    </string-array>
+
+    <string-array name="medio">
+        <item>1 a 200</item>
+    </string-array>
+
+    <string-array name="dificil">
+        <item>1 a 400</item>
+    </string-array>
+
+    <string-array name="muydificil">
+        <item>1 a 1100</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Adivinador_LuisMonge</string>
+    <string name="adivinador_de_numeros">Adivinador de Numeros</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="introduce_usuario">Introduce usuario</string>
+    <string name="partidas">Partidas</string>
+    <string name="puntuacion">Puntuacion</string>
+    <string name="comprobar">Comprobar</string>
+    <string name="nueva_partida">Nueva partida</string>
+    <string name="comojugar">Instrucciones: Tenemos que adivinar un numero, tenemos 5 intentos y podemos elegir entre 4 distintas dificultades</string>
+</resources>
