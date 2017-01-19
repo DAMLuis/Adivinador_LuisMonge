@@ -42,9 +42,12 @@ public class Info_JugadorAdapter extends ArrayAdapter<Jugador> {
         TextView puntos=(TextView)vista.findViewById(R.id.tv_infoPuntos);
 
 
-        nombre.setText("Usuario: "+jugador.getUsuario());
-        partidas.setText("Partidas: "+jugador.getPartidas());
-        puntos.setText("Puntos: "+jugador.getPuntuacion());
+
+            nombre.setText("Usuario: "+jugador.getUsuario());
+            partidas.setText("Partidas: "+jugador.getPartidas());
+            puntos.setText("Puntos: "+jugador.getPuntuacion());
+
+
 
         return vista;
 
