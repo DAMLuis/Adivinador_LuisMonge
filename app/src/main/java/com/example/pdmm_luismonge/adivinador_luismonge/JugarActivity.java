@@ -20,8 +20,7 @@ public class JugarActivity extends AppCompatActivity {
     int intentos=0;
     int pos;
     Random r = new Random();
-    Button comprobar;
-    Button nuevaPartida;
+    Button comprobar, nuevaPartida, infoJugador;
     EditText numS;
     TextView tv_partidas;
     TextView tv_puntos;
@@ -39,6 +38,7 @@ public class JugarActivity extends AppCompatActivity {
         nuevaPartida=(Button)findViewById(R.id.btn_nuevaPartida);
         tv_partidas=(TextView)findViewById(R.id.tv_partidas);
         tv_puntos=(TextView)findViewById(R.id.tv_puntos);
+        infoJugador=(Button)findViewById(R.id.btn_infoJugador);
 
         nuevaPartida.setEnabled(false);
 
@@ -115,7 +115,16 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
+        //carga los datos
         datos();
+
+        infoJugador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(JugarActivity.this,Info_Jugador.class));
+            }
+        });
+
 
     }
 

@@ -81,5 +81,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="44dp" />
 
+    <Button
+        android:text="Info Jugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_infoJugador"
+        android:layout_above="@+id/btn_nuevaPartida"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
