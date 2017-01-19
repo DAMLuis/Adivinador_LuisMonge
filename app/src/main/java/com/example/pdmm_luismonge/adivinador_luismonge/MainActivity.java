@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     Button iniciar;
     EditText usuario;
     int pos;
-    public static ArrayList<Jugador> jugador = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,19 +61,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void jugar(View view){
         String user = usuario.getText().toString();
-        Jugador juga = new Jugador(user,0,0);
-        jugador.add(juga);
 
-        if(user.isEmpty()){
-            Toast.makeText(getApplicationContext(),"Introduce un usuario" ,Toast.LENGTH_SHORT).show();
-        }else{
-            Intent i = new Intent(MainActivity.this,JugarActivity.class);
-            Bundle b = new Bundle();
-            b.putInt("pos", pos);
-            i.putExtras(b);
+            if (user.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "Introduce un usuario", Toast.LENGTH_SHORT).show();
 
-            startActivity(i);
-        }
+            } else {
+                Intent i = new Intent(MainActivity.this, JugarActivity.class);
+                Bundle b = new Bundle();
+                b.putInt("pos", pos);
+                i.putExtras(b);
+
+                Bundle no = new Bundle();
+                no.putString("user", user);
+                i.putExtras(no);
+
+                startActivity(i);
+            }
+
+
 
     }
 

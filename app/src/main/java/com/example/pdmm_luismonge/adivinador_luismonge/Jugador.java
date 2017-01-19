@@ -11,7 +11,7 @@ public class Jugador {
     private String usuario;
     private int puntuacion;
     private int partidas;
-    public static ArrayList<String>datos=new ArrayList<>();
+
 
     public Jugador(){}
 
@@ -19,7 +19,7 @@ public class Jugador {
         this.setUsuario(usuario);
         this.setPuntuacion(puntuacion);
         this.setPartidas(partidas);
-        datos.add(" Usuario: "+usuario+" Puntos: " + puntuacion +  " Partidas: " + partidas);
+
     }
 
 

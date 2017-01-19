@@ -11,12 +11,13 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class JugarActivity extends AppCompatActivity {
     private int nGenerado;
     int puntos;
-    int partidas=0;
+    int partidas;
     int intentos=0;
     int pos;
     Random r = new Random();
@@ -24,6 +25,8 @@ public class JugarActivity extends AppCompatActivity {
     EditText numS;
     TextView tv_partidas;
     TextView tv_puntos;
+    String user;
+    public static ArrayList<Jugador> info = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,11 @@ public class JugarActivity extends AppCompatActivity {
         Intent i = getIntent();
         Bundle b = i.getExtras();
         pos = b.getInt("pos");
+
+
+        Bundle no = i.getExtras();
+        user= no.getString("user");
+
 
         comprobar = (Button)findViewById(R.id.btn_comprobar);
         numS = (EditText)findViewById(R.id.edt_num);
@@ -87,13 +95,14 @@ public class JugarActivity extends AppCompatActivity {
                     }
 
                     if (intentos >= 5) {
-                        puntos=-4;
+                        puntos-=4;
                         Toast.makeText(getApplicationContext(), "Has perdido", Toast.LENGTH_SHORT).show();
                         comprobar.setEnabled(false);
                         tv_partidas.setText(String.valueOf(partidas));
                         tv_puntos.setText(String.valueOf(puntos));
                         nuevaPartida.setEnabled(true);
                     }
+
                 }
 
             }
@@ -115,12 +124,13 @@ public class JugarActivity extends AppCompatActivity {
             }
         });
 
-        //carga los datos
-        datos();
+
+
 
         infoJugador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                info.add(new Jugador(user,puntos,partidas));//carga los datos
                 startActivity(new Intent(JugarActivity.this,Info_Jugador.class));
             }
         });
@@ -152,11 +162,6 @@ public class JugarActivity extends AppCompatActivity {
 
 
 
-    public void datos(){
-        Jugador j1 = new Jugador();
-        j1.setPartidas(partidas);
-        j1.setPuntuacion(puntos);
-    }
 
 
 
